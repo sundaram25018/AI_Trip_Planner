@@ -17,6 +17,7 @@ SYSTEM_PROMPT = SystemMessage(
     - Detailed cost breakdown
     - Per Day expense budget approximately
     - Weather details
+    - Suggested images of the place
     
     Use the available tools to gather information and make detailed cost breakdowns.
     Provide everything in one comprehensive response formatted in clean Markdown.

@@ -7,6 +7,7 @@ from tools.weather_info_tool import WeatherInfoTool
 from tools.place_search_tool import PlaceSearchTool
 from tools.expense_calculator_tool import CalculatorTool
 from tools.currency_conversion_tool import CurrencyConverterTool
+from tools.imagesResult import ImageInfoTool
 
 class GraphBuilder():
     def __init__(self,model_provider: str = "groq"):
@@ -19,11 +20,13 @@ class GraphBuilder():
         self.place_search_tools = PlaceSearchTool()
         self.calculator_tools = CalculatorTool()
         self.currency_converter_tools = CurrencyConverterTool()
+        self.image_search_service = ImageInfoTool()
         
         self.tools.extend([* self.weather_tools.weather_tool_list, 
                            * self.place_search_tools.place_search_tool_list,
                            * self.calculator_tools.calculator_tool_list,
-                           * self.currency_converter_tools.currency_converter_tool_list])
+                           * self.currency_converter_tools.currency_converter_tool_list,
+                           * self.image_search_service.image_tool_list])
         
         self.llm_with_tools = self.llm.bind_tools(tools=self.tools)
         
